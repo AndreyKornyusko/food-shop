@@ -29,6 +29,7 @@
     "format": "eslint src/**/*.js --fix",
     "server": "json-server --watch server/db.json"
   },
+  
   "eslintConfig": {
     "extends": "react-app"
   },
