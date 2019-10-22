@@ -17,6 +17,7 @@
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
+    "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0"
   },
@@ -29,7 +30,6 @@
     "format": "eslint src/**/*.js --fix",
     "server": "json-server --watch server/db.json"
   },
-  
   "eslintConfig": {
     "extends": "react-app"
   },
