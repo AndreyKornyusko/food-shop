@@ -1,10 +1,6 @@
 import React from 'react';
 
-const styles = {
-  select: {
-    fontSize: 20,
-  },
-};
+import styles from './CategorySelect.module.scss';
 
 const MenuCategorySelectForm = ({
   options,
@@ -14,22 +10,20 @@ const MenuCategorySelectForm = ({
   Submit,
   categor,
 }) => (
-  <>
-    <div>
-      <select
-        style={styles.select}
-        value={value}
-        onChange={e => onChange(e.target.value)}
-      >
-        {options.map(o => (
-          <option key={o} value={o}>
-            {o}
-          </option>
-        ))}
-      </select>
-      {children}
-    </div>
-  </>
+  <div className={styles.wrap}>
+    <select
+      className={styles.select}
+      value={value}
+      onChange={e => onChange(e.target.value)}
+    >
+      {options.map(o => (
+        <option className={styles.options} key={o} value={o}>
+          {o}
+        </option>
+      ))}
+    </select>
+    {children}
+  </div>
 );
 
 export default MenuCategorySelectForm;

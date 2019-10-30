@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import routes from '../../configs/routes';
-import s from './menuGrid.module.css';
+import s from './menuGrid.module.scss';
 
 import MenuCard from './MenuCard';
 
@@ -12,6 +12,7 @@ const MenuGrid = ({ items, addToCart, location }) => (
         {items.map(item => (
           <li className={s.itemCard} key={item.id}>
             <Link
+              className={s.link}
               to={{
                 pathname: `${routes.MENU}/${item.id}`,
                 state: { from: location },

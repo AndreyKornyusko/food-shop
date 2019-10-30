@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './cart.module.css';
+import s from './cart.module.scss';
 
 const Cart = ({
   products = [],

@@ -1,0 +1,22 @@
+.select {
+  width: 140px;
+  height: 40px;
+  margin: 0 auto;
+  margin-right: 20px;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.options {
+font-size: 20px;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 40px;
+  margin: 0 auto;
+}

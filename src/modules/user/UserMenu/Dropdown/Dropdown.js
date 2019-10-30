@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import userNavItems from '../../../../configs/user-nav';
 
-import s from './Dropdown.module.css';
+import s from './Dropdown.module.scss';
 
 const Dropdown = () => (
   <div className={s.container}>

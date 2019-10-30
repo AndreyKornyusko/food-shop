@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Loader = () => <div>Loading...</div>;
+const Loader = () => <div>Waiting for a response from Heroku...</div>;
 
 export default Loader;

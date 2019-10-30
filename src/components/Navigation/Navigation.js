@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import styles from './Navigation.module.css';
+import styles from './Navigation.module.scss';
 
 const Navigation = ({ items = [] }) => (
   <ul className={styles.list}>

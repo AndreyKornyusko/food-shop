@@ -36,7 +36,9 @@ const fetchFoodCategories = () => dispatch => {
 const fetchMenuItemsWithCategory = category => dispatch => {
   dispatch(action.fetchRequest());
   getMenuItemsWithCategory(category)
-    .then(items => dispatch(action.fetchSuccess(items)))
+    .then(items => {
+      dispatch(action.fetchSuccess(items));
+    })
     .catch(error => dispatch(action.fetchError(error)));
 };
 

@@ -1,11 +1,12 @@
 import React from 'react';
+import styles from './ResetButton.module.scss';
 
 const MenuSelectFormReset = ({ categor, Submit }) => (
   <>
-    <button type="button" onClick={Submit}>
+    <button className={styles.button} type="button" onClick={Submit}>
       Очистить фильтр
     </button>
-    <p> Текущий фильтр: {categor} </p>
+    <p className={styles.filter}> Текущий фильтр: {categor} </p>
   </>
 );
 

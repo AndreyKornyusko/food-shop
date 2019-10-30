@@ -18,6 +18,7 @@ const getCategoryFromProps = props =>
 class MenuGridContainer extends Component {
   state = {
     isCategoryChanged: false,
+    // loading: true,
   };
 
   componentDidMount() {
@@ -94,7 +95,7 @@ class MenuGridContainer extends Component {
           </MenuCategorySelectForm>
         }
 
-        {/* {loading && <Loader />} */}
+        {loading && <Loader />}
         {/* {error && <h1>Error</h1>} */}
         {menuList.length > 0 && (
           <MenuGrid items={menuList} addToCart={addToCart} />
