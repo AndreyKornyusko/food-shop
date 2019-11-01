@@ -7,7 +7,9 @@ const MenuCard = ({ name, image, price }) => (
       <img className={styles.img} src={image} alt={name} />
     </div>
     <p className={styles.name}>{name}</p>
-    <p className={styles.price}>Цена: {price}грн</p>
+    <p>
+      Цена: <span className={styles.price}>{price}грн </span>{' '}
+    </p>
   </div>
 );
 

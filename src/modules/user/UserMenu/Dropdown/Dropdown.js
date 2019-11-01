@@ -7,10 +7,12 @@ import s from './Dropdown.module.scss';
 
 const Dropdown = () => (
   <div className={s.container}>
-    <ul>
+    <ul className={s.list}>
       {userNavItems.map(item => (
-        <li key={item.name}>
-          <Link to={item.path}>{item.name}</Link>
+        <li className={s.listItem} key={item.name}>
+          <Link className={s.link} to={item.path}>
+            {item.name}
+          </Link>
         </li>
       ))}
     </ul>

@@ -1,14 +1,8 @@
 import React from 'react';
 import s from './Avatar.module.scss';
 
-const Avatar = ({ image = '', width = 60, height = 60 }) => (
-  <img
-    className={s.avatar}
-    src={image}
-    alt="user avatar"
-    width={width}
-    height={height}
-  />
+const Avatar = ({ image = '' }) => (
+  <img className={s.avatar} src={image} alt="user avatar" />
 );
 
 export default Avatar;

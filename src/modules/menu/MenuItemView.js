@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './MenuItem.module.scss';
 
 const MenuItemView = ({
   id,
@@ -10,15 +11,31 @@ const MenuItemView = ({
   goBackToMenu,
   children,
 }) => (
-  <div>
-    <button type="button" onClick={goBackToMenu}>
+  <div className={styles.wrapper}>
+    <button className={styles.button} type="button" onClick={goBackToMenu}>
       Назад к меню
     </button>
-    <img src={image} alt={name} width={320} height={240} />
-    <p>Name: {name}</p>
-    <p>Description: {description}</p>
-    <p>Ingredients: {ingredients}</p>
-    <p>Price: {price}</p>
+    <div className={styles.imgWrap}>
+      <img className={styles.img} src={image} alt={name} />
+    </div>
+    <div className={styles.textWrap}>
+      <p className={styles.name}>
+        {' '}
+        <span className={styles.boldText}>Имя:</span> {name}
+      </p>
+      <p className={styles.description}>
+        {' '}
+        <span className={styles.boldText}>Описание:</span> {description}
+      </p>
+      <p className={styles.ingredients}>
+        {' '}
+        <span className={styles.boldText}>Ингридиенты:</span> {ingredients}
+      </p>
+      <p className={styles.price}>
+        {' '}
+        <span className={styles.boldText}>Цена:</span> {price}грн
+      </p>
+    </div>
     {children}
   </div>
 );

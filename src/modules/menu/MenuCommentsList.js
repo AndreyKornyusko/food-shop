@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './Comments.module.scss';
 
 const CommentsList = ({ notes }) => (
-  <ul>
+  <ul className={styles.list}>
     {notes.map(({ id, text }) => (
-      <li key={id}>
+      <li className={styles.item} key={id}>
         <span>{text}</span>
       </li>
     ))}

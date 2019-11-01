@@ -1,0 +1,30 @@
+.list {
+  width: 290px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  @media screen and (min-width: 480px){
+    width: 300px;
+  }
+
+  @media screen and (min-width: 768px){
+    width: 400px;
+  }
+
+  @media screen and (min-width: 960px){
+    width: 600px;
+  }
+
+  @media screen and (min-width: 1280px){
+    width: 800px;
+  }
+
+  @media screen and (min-width: 2560px){
+    max-width: 1000px;
+  }
+}
+
+.item{
+  padding-top: 20px;
+  margin-bottom: 20px;
+  list-style: none;
+}
