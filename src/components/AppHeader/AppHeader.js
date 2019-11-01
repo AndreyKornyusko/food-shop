@@ -45,7 +45,10 @@ class AppHeader extends Component {
             </button>
             {isMenuOpen && (
               <Modal onClose={this.closeModal}>
-                <DropdownNavigation items={navItems} />
+                <DropdownNavigation
+                  items={navItems}
+                  handleClick={this.closeModal}
+                />
               </Modal>
             )}
           </div>

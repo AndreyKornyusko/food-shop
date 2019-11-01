@@ -10,11 +10,14 @@
   justify-content: center;
   align-items: center;
 
-  @media screen and (min-width:768px){
+  @media screen and (min-width: 768px) {
     width: 320px;
     height: 320px;
-    }
+  }
+}
 
+p {
+  padding-left: 10px;
 }
 
 .img {
@@ -24,4 +27,6 @@
 
 .price {
   font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(158, 219, 243);
 }
