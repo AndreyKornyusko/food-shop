@@ -11,17 +11,20 @@ const MenuCategorySelectForm = ({
   categor,
 }) => (
   <div className={styles.wrap}>
-    <select
-      className={styles.select}
-      value={value}
-      onChange={e => onChange(e.target.value)}
-    >
-      {options.map(o => (
-        <option className={styles.options} key={o} value={o}>
-          {o}
-        </option>
-      ))}
-    </select>
+    <div className={styles.selectWrap}>
+      <span className={styles.category}>Categories</span>
+      <select
+        className={styles.select}
+        value={value}
+        onChange={e => onChange(e.target.value)}
+      >
+        {options.map(o => (
+          <option className={styles.options} key={o} value={o}>
+            {o}
+          </option>
+        ))}
+      </select>
+    </div>
     {children}
   </div>
 );
