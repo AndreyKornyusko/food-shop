@@ -1,6 +1,19 @@
 import types from './actionType';
 import { combineReducers } from 'redux';
 
+function loadingReducer(state = false, { type, payload }) {
+  switch (type) {
+    case types.FETCH_REQUEST:
+      return true;
+    case types.FETCH_SUCCESS:
+    case types.FETCH_ERROR:
+      return false;
+
+    default:
+      return state;
+  }
+}
+
 function menuReducer(state = [], { type, payload }) {
   switch (type) {
     case types.FETCH_SUCCESS:
@@ -41,5 +54,6 @@ export default combineReducers({
   menuIds: menuReducer,
   itemById: itemByIdReducer,
   categories: categoryReducer,
+  loading: loadingReducer,
   error,
 });

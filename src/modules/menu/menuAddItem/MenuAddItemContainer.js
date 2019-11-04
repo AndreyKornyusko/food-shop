@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import * as API from '../../services/api';
-import routes from '../../configs/routes';
+import {
+  getAllMenuItems,
+  getItemsById,
+  getCategories,
+  getMenuItemsWithCategory,
+} from '../../../services/axiosApi';
+
+import * as API from '../../../services/api';
+import routes from '../../../configs/routes';
 
 import MenuAddItemView from './MenuAddItemView';
 
@@ -19,7 +26,7 @@ class AddItemContainer extends Component {
   };
 
   componentDidMount() {
-    API.getCategories().then(data => this.setState({ categories: data }));
+    getCategories().then(data => this.setState({ categories: data }));
   }
 
   handleChange = ({ target }) => {

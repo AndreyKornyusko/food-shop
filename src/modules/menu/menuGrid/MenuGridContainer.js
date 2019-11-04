@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import MenuGrid from './MenuGridView';
-import Loader from '../../components/Loader';
-import MenuCategorySelectForm from './MenuCategorySelector';
+import Loader from '../../../components/loader/Loader';
+import MenuCategorySelectForm from '../categorySelect/MenuCategorySelector';
 import queryString from 'query-string';
 import { withRouter } from 'react-router-dom';
-import MenuSelectFormReset from './MenuSelectFormReset';
+import MenuSelectFormReset from '../categorySelect/MenuSelectFormReset';
 
 import { connect } from 'react-redux';
 
-import { asyncOperation, menuSelectors } from '../../redux/menu';
-import { cartActions } from '../../redux/cart';
-import actionMenu from '../../redux/menu/actionMenu';
+import { asyncOperation, menuSelectors } from '../../../redux/menu';
+import { cartActions } from '../../../redux/cart';
+import actionMenu from '../../../redux/menu/actionMenu';
 
 const getCategoryFromProps = props =>
   queryString.parse(props.location.search).category;
@@ -73,11 +73,12 @@ class MenuGridContainer extends Component {
   };
 
   render() {
-    const { menuList, menuCategories, addToCart, error } = this.props;
+    const { loading, menuList, menuCategories, addToCart, error } = this.props;
+    // const {loading}=this.props.state.menu.loading;
     const currentCategory = getCategoryFromProps(this.props);
-    const { loading, isCategoryChanged } = this.state;
+    const { isCategoryChanged } = this.state;
 
-    // console.log('menuList', menuList);
+    console.log('error', error);
     // console.log('this.props.state', this.props.state);
 
     return (
@@ -97,8 +98,8 @@ class MenuGridContainer extends Component {
           </MenuCategorySelectForm>
         }
 
-        {/* {loading && <Loader />} */}
-        {/* {error && <h1>Error</h1>} */}
+        {loading && <Loader />}
+        {/* {error && <h1>Error {error}</h1>} */}
         {menuList.length > 0 && (
           <MenuGrid items={menuList} addToCart={addToCart} />
         )}
@@ -111,6 +112,7 @@ const mapStateToProps = state => ({
   menuList: menuSelectors.getMenu(state),
   menuCategories: menuSelectors.getFoodCategories(state),
   // state: state,
+  loading: state.menu.loading,
 });
 
 const mapDispatchToProps = {

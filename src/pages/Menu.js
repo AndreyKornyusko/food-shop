@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuGrid from '../modules/menu/MenuGridContainer';
+import MenuGrid from '../modules/menu/menuGrid/MenuGridContainer';
 
 const MenuPage = () => (
   <div>

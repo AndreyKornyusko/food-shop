@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import routes from '../../configs/routes';
+import routes from '../../../configs/routes';
 import s from './menuGrid.module.scss';
 
-import MenuCard from './MenuCard';
+import MenuCard from '../card/MenuCard';
 
 const MenuGrid = ({ items, addToCart, location }) => (
   <>

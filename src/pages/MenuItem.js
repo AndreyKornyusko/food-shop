@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItem from '../modules/menu/MenuItemContainer';
+import MenuItem from '../modules/menu/menuItem/MenuItemContainer';
 
 const MenuItemPage = ({ match }) => (
   <div>

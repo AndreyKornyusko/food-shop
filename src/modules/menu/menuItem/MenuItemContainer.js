@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import MenuItem from './MenuItemView';
 import { withRouter } from 'react-router-dom';
-import CommentForm from './MenucommentFormView';
-import CommentsList from './MenuCommentsList';
+import CommentForm from '../comments/MenucommentFormView';
+import CommentsList from '../comments/MenuCommentsList';
 import { connect } from 'react-redux';
-import routes from '../../configs/routes';
+import routes from '../../../configs/routes';
 import queryString from 'query-string';
 
-import { asyncOperation, menuSelectors } from '../../redux/menu';
+import { asyncOperation, menuSelectors } from '../../../redux/menu';
 
 const INITIAL_STATE = {
   text: '',
