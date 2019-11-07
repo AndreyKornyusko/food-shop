@@ -13,4 +13,12 @@ export default [
     name: 'Meal Planner',
     path: routes.PLANNER,
   },
+  //   {
+  //   name: 'Sign up',
+  //   path: routes.SIGNUP,
+  // },
+  // {
+  //   name: 'Log in',
+  //   path: routes.LOGIN,
+  // },
 ];

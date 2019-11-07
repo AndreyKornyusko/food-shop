@@ -1,6 +1,8 @@
 import React, { Component, createRef } from 'react';
 import Dropdown from './Dropdown/Dropdown';
 import Avatar from '../Avatar/Avatar';
+import AuthMenu from '../../../components/AuthNav/AuthNav';
+import UserProfile from '../../../components/UserProfile/UserProfile';
 import s from './UserMenu.module.scss';
 
 export default class UserMenu extends Component {
@@ -45,7 +47,7 @@ export default class UserMenu extends Component {
 
   render() {
     const { isDropdownOpen } = this.state;
-    const { name, avatar } = this.props;
+    const { username, avatar, children } = this.props;
 
     return (
       <div
@@ -53,9 +55,8 @@ export default class UserMenu extends Component {
         onClick={this.openDropdown}
         ref={this.containerRef}
       >
-        <Avatar image={avatar} />
-        <span className={s.name}>{name}</span>
-        {isDropdownOpen && <Dropdown />}
+        {children}
+        {isDropdownOpen && <Dropdown username={username} />}
       </div>
     );
   }

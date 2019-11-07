@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  display: block;
+  border-radius: 50%;
+  margin-right: 4px;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.name {
+  line-height: 1;
+  font-size: 20px;
+  margin-right: 24px;
+  display: none;
+  @media screen and (min-width:860px){
+    display: block;
+    max-width: 165px;
+  }
+}
+
+.icon {
+  &:hover {
+    fill: rgb(147, 146, 202);
+  }
+}
+
+.logout {
+  background-color: #fff;
+  border:none;
+  padding: 10px;
+}
+
