@@ -1,34 +1,28 @@
 import axios from 'axios';
 
 // axios.defaults.baseURL = 'https://my-cool-projectapi.herokuapp.com/';
-// http://localhost:3000
+// http://localhost:3030
 
 export const getAllMenuItems = async () => {
-  const response = await axios.get(
-    'https://my-cool-projectapi.herokuapp.com/menu',
-  );
+  const response = await axios.get('http://localhost:3000/menu');
   return response.data;
 };
 
 export const getCategories = async () => {
-  const response = await axios.get(
-    'https://my-cool-projectapi.herokuapp.com/categories',
-  );
+  const response = await axios.get('http://localhost:3030/categories');
   return response.data;
 };
 
 export const getMenuItemsWithCategory = async category => {
   const response = await axios.get(
-    `https://my-cool-projectapi.herokuapp.com/menu?category=${category}`,
+    `http://localhost:3000/menu?category=${category}`,
   );
   return response.data;
 };
 
 export const getAllOrders = async () => {
   try {
-    const response = await axios.get(
-      'https://my-cool-projectapi.herokuapp.com/order',
-    );
+    const response = await axios.get('http://localhost:3000/order');
     return response.data;
   } catch (error) {
     return error;
@@ -36,8 +30,6 @@ export const getAllOrders = async () => {
 };
 
 export const getItemsById = async id => {
-  const response = await axios.get(
-    `https://my-cool-projectapi.herokuapp.com/menu/${id}`,
-  );
+  const response = await axios.get(`http://localhost:3000/menu/${id}`);
   return response.data;
 };
