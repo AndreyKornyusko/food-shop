@@ -14,7 +14,7 @@ import {
 import * as selectors from './selectors';
 
 // axios.defaults.baseURL = 'http://localhost:4040';
-
+// https://food-shop-auth-api.herokuapp.com/
 const setAuthHeader = token => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 };
@@ -27,7 +27,7 @@ export const signUp = credentials => dispatch => {
   dispatch(signUpRequest());
 
   axios
-    .post('http://localhost:4040/auth/signup', credentials)
+    .post('https://food-shop-auth-api.herokuapp.com//auth/signup', credentials)
     // .then((response)=>{console.log('response',response);})
     .then(({ data }) => {
       setAuthHeader(data.token);
@@ -41,7 +41,7 @@ export const signIn = credentials => dispatch => {
   dispatch(signInRequest());
 
   axios
-    .post('http://localhost:4040/auth/signin', credentials)
+    .post('https://food-shop-auth-api.herokuapp.com//auth/signin', credentials)
     .then(({ data }) => {
       setAuthHeader(data.token);
       dispatch(signInSuccess(data));
@@ -52,10 +52,12 @@ export const signIn = credentials => dispatch => {
 export const signOut = () => dispatch => {
   dispatch(signOutRequest());
 
-  axios.post('http://localhost:4040/auth/signout').then(() => {
-    clearAuthHeader();
-    dispatch(signOutSuccess());
-  });
+  axios
+    .post('https://food-shop-auth-api.herokuapp.com//auth/signout')
+    .then(() => {
+      clearAuthHeader();
+      dispatch(signOutSuccess());
+    });
 };
 
 export const refreshCurrentUser = () => (dispatch, getState) => {
@@ -68,7 +70,7 @@ export const refreshCurrentUser = () => (dispatch, getState) => {
   dispatch(refreshUserStart());
 
   axios
-    .get('http://localhost:4040/auth/current')
+    .get('https://food-shop-auth-api.herokuapp.com//auth/current')
     .then(({ data }) => dispatch(refreshUserSuccess(data.user)))
     .catch(error => {
       // dispach екшен чтобы убрать токен из state
