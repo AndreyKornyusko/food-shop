@@ -27,7 +27,7 @@ export const signUp = credentials => dispatch => {
   dispatch(signUpRequest());
 
   axios
-    .post('https://food-shop-auth-api.herokuapp.com//auth/signup', credentials)
+    .post('https://total-name-258415.appspot.com/auth/signup', credentials)
     // .then((response)=>{console.log('response',response);})
     .then(({ data }) => {
       setAuthHeader(data.token);
@@ -41,7 +41,7 @@ export const signIn = credentials => dispatch => {
   dispatch(signInRequest());
 
   axios
-    .post('https://food-shop-auth-api.herokuapp.com//auth/signin', credentials)
+    .post('https://total-name-258415.appspot.com/auth/signin', credentials)
     .then(({ data }) => {
       setAuthHeader(data.token);
       dispatch(signInSuccess(data));
@@ -52,12 +52,10 @@ export const signIn = credentials => dispatch => {
 export const signOut = () => dispatch => {
   dispatch(signOutRequest());
 
-  axios
-    .post('https://food-shop-auth-api.herokuapp.com//auth/signout')
-    .then(() => {
-      clearAuthHeader();
-      dispatch(signOutSuccess());
-    });
+  axios.post('https://total-name-258415.appspot.com/auth/signout').then(() => {
+    clearAuthHeader();
+    dispatch(signOutSuccess());
+  });
 };
 
 export const refreshCurrentUser = () => (dispatch, getState) => {
@@ -70,7 +68,7 @@ export const refreshCurrentUser = () => (dispatch, getState) => {
   dispatch(refreshUserStart());
 
   axios
-    .get('https://food-shop-auth-api.herokuapp.com//auth/current')
+    .get('https://total-name-258415.appspot.com/auth/current')
     .then(({ data }) => dispatch(refreshUserSuccess(data.user)))
     .catch(error => {
       // dispach екшен чтобы убрать токен из state

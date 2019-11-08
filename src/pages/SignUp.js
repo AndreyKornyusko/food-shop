@@ -18,7 +18,7 @@ class SignUp extends Component {
     return (
       <div>
         <h1 style={{ textAlign: 'center', fontWeight: 500 }}>
-          Create your acccount for free
+          Create your account for free
         </h1>
         <SignUpForm />
       </div>
