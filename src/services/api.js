@@ -4,35 +4,35 @@ import axios from 'axios';
 
 export const getAllMenuItems = async () => {
   const response = await axios.get(
-    'https://my-cool-projectapi.herokuapp.com/menu',
+    'https://json-server-258905.appspot.com/menu',
   );
   return response.data;
 };
 
 export const getCategories = async () => {
   const response = await axios.get(
-    'https://my-cool-projectapi.herokuapp.com/categories',
+    'https://json-server-258905.appspot.com/categories',
   );
   return response.data;
 };
 
 export const getMenuItemById = async id => {
   const response = await axios.get(
-    `https://my-cool-projectapi.herokuapp.com/menu/${id}`,
+    `https://json-server-258905.appspot.com/menu/${id}`,
   );
   return response.data;
 };
 
 export const getMenuItemsWithCategory = async category => {
   const response = await axios.get(
-    `https://my-cool-projectapi.herokuapp.com/menu?category=${category}`,
+    `https://json-server-258905.appspot.com/menu?category=${category}`,
   );
   return response.data;
 };
 
 export const postMenuItem = async item => {
   const response = await axios.post(
-    `https://my-cool-projectapi.herokuapp.com/menu`,
+    `https://json-server-258905.appspot.com/menu`,
     item,
   );
   return response;
