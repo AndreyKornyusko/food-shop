@@ -10,10 +10,18 @@ const fetchRequest = () => ({
 const fetchSuccess = menuItems => {
   const normMenu = normalize(menuItems, [schema.menuSchema]);
 
+  console.log('menuItems from action', menuItems);
+
+  // console.log('normMenu', normMenu)
+  // console.log('ids', Object.keys(normMenu.entities.menu))
+  // console.log('entities',  normMenu.entities)
+
   return {
     type: types.FETCH_SUCCESS,
     payload: {
-      ids: Object.keys(normMenu.entities.menu),
+      // ids: Object.keys(normMenu.entities.menu),
+      menu: menuItems,
+
       entities: normMenu.entities,
     },
   };

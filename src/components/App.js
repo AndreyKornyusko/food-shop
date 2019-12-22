@@ -14,14 +14,12 @@ import AccountPage from '../pages/Account';
 import OrderHistoryPage from '../pages/OrderHistory';
 import MealPlannerPage from '../pages/Planner';
 import CartPage from '../pages/Cart';
-// import SignUpPage from '../pages/SignUp';
-// import LogInPage from '../pages/SignIn';
 
 import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute';
 import * as operations from '../redux/auth/operations';
 import routes from '../configs/routes';
 
-const asyncMenuPage = lazy(() =>
+const MenuPage = lazy(() =>
   import('../pages/Menu' /* webpackChunkName: "menu-page" */),
 );
 
@@ -46,25 +44,23 @@ class App extends Component {
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
             <Route exact path={routes.MAIN} component={MainPage} />
-            <Route exact path={routes.MENU} component={asyncMenuPage} />
+            <Route exact path={routes.MENU} component={MenuPage} />
             <Route exact path={routes.ADD_MENU_ITEM} component={AddItemPage} />
             <Route exact path={routes.MENU_ITEM} component={MenuItemPage} />
             <Route path={routes.ABOUT} component={AboutPage} />
             <Route path={routes.CONTACT} component={ContactPage} />
             <Route path={routes.DELIVERY} component={DeliveryPage} />
-            <Route path={routes.ACCOUNT} component={AccountPage} />
-            <Route path={routes.ORDER_HISTORY} component={OrderHistoryPage} />
 
-            {/* <ProtectedRoute
-              path={routes.Profile}
+            <ProtectedRoute
+              path={routes.ACCOUNT}
               redirectTo={routes.LOGIN}
-              component={Profile}
+              component={AccountPage}
             />
             <ProtectedRoute
-              path={routes.Dashboard}
+              path={routes.ORDER_HISTORY}
               redirectTo={routes.LOGIN}
-              component={Dashboard}
-            /> */}
+              component={OrderHistoryPage}
+            />
             <Route path={routes.SIGNUP} component={SignUpPage} />
             <Route path={routes.LOGIN} component={LogInPage} />
             <Route path={routes.PLANNER} component={MealPlannerPage} />

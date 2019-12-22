@@ -34,6 +34,7 @@ class AddItemContainer extends Component {
     this.setState(prevState => ({
       newItem: { ...prevState.newItem, [name]: value },
     }));
+    console.log('newItem', this.state.newItem);
   };
 
   handlePostItem = e => {

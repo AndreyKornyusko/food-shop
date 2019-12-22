@@ -13,7 +13,7 @@ import {
 } from './actions';
 import * as selectors from './selectors';
 
-// axios.defaults.baseURL = 'http://localhost:4040';
+// axios.defaults.baseURL = 'http://localhost:3000';
 // https://food-shop-auth-api.herokuapp.com/
 const setAuthHeader = token => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;

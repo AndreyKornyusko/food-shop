@@ -4,9 +4,7 @@ import axios from 'axios';
 // http://localhost:3030
 
 export const getAllMenuItems = async () => {
-  const response = await axios.get(
-    'https://json-server-258905.appspot.com/menu',
-  );
+  const response = await axios.get('http://localhost:3002/menu');
   return response.data;
 };
 

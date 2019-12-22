@@ -78,8 +78,8 @@ class MenuGridContainer extends Component {
     const currentCategory = getCategoryFromProps(this.props);
     const { isCategoryChanged } = this.state;
 
-    console.log('error', error);
-    // console.log('this.props.state', this.props.state);
+    // console.log('error', error);
+    console.log('this.props.menuList', this.props.menuList);
 
     return (
       <div>

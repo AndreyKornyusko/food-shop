@@ -17,7 +17,8 @@ function loadingReducer(state = false, { type, payload }) {
 function menuReducer(state = [], { type, payload }) {
   switch (type) {
     case types.FETCH_SUCCESS:
-      return payload.ids;
+      // return payload.ids;
+      return payload.menu;
 
     default:
       return state;
@@ -51,7 +52,9 @@ function itemByIdReducer(state = [], { type, payload }) {
 }
 
 export default combineReducers({
-  menuIds: menuReducer,
+  // menuIds: menuReducer,
+  menu: menuReducer,
+
   itemById: itemByIdReducer,
   categories: categoryReducer,
   loading: loadingReducer,

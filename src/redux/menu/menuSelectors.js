@@ -4,12 +4,17 @@ const entityMenu = state => state.entity.menu;
 const getMenuId = state => state.menu.menuIds;
 // const itemId = state => state.menu.itemById;
 
-const getMenu = createSelector(
-  [entityMenu, getMenuId],
-  (menu, ids) => {
-    return ids.map(id => menu[id]);
-  },
-);
+// const getMenu = createSelector(
+//   [entityMenu, getMenuId],
+//   (menu, ids) => {
+//     return ids.map(id => menu[id]);
+//   },
+// );
+
+const getMenu = state => {
+  // console.log('state from selectors', state)
+  return state.menu.menu;
+};
 
 const getFoodCategories = state => state.menu.categories;
 

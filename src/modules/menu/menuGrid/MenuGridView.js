@@ -10,17 +10,17 @@ const MenuGrid = ({ items, addToCart, location }) => (
     <div className={s.containerMenu}>
       <ul className={s.containerMenu}>
         {items.map(item => (
-          <li className={s.itemCard} key={item.id}>
+          <li className={s.itemCard} key={item._id}>
             <Link
               className={s.link}
               to={{
-                pathname: `${routes.MENU}/${item.id}`,
+                pathname: `${routes.MENU}/${item._id}`,
                 state: { from: location },
               }}
             >
               <MenuCard {...item} />
             </Link>
-            <button type="button" onClick={() => addToCart(item.id)}>
+            <button type="button" onClick={() => addToCart(item._id)}>
               Добавить в корзину
             </button>
           </li>

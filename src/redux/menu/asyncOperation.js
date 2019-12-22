@@ -11,7 +11,10 @@ const fetchMenuItems = () => dispatch => {
   dispatch(action.fetchRequest());
 
   getAllMenuItems()
-    .then(Items => dispatch(action.fetchSuccess(Items)))
+    .then(Items => {
+      console.log('items from async operations', Items);
+      dispatch(action.fetchSuccess(Items));
+    })
     .catch(error => dispatch(action.fetchError(error)));
 };
 
